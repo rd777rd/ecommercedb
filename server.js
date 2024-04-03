@@ -10,9 +10,7 @@ const saltRounds = 10;
 const PORT = 3001;
 const app = express();
 app.use(express.json());
-app.use(cors({origin: ["http://localhost:3000"],
- methods: ["POST", "GET"],
-  credentials:true}));
+app.use(cors());
   
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
