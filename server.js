@@ -114,6 +114,6 @@ app.post('/login', (req, res) => {
 })
 })
 
-app.listen(8081, ()=> {
-    console.log('listening')
+app.listen(process.env.PORT || PORT, () => {
+    console.log('listening on port ${PORT}')
 })
