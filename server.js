@@ -7,6 +7,7 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 const saltRounds = 10;
+const PORT = 3001;
 const app = express();
 app.use(express.json());
 app.use(cors({origin: ["http://localhost:3000"],
