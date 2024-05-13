@@ -7,10 +7,12 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 const saltRounds = 10;
-const PORT = 3001;
+const PORT = 8081
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin: ["http://localhost:3000"],
+ methods: ["POST", "GET"],
+  credentials:true}));
   
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -113,6 +115,6 @@ app.post('/login', (req, res) => {
 })
 })
 
-app.listen(process.env.PORT || PORT, () => {
-    console.log('listening')
+app.listen(process.env.PORT || PORT, ()=> {
+    console.log(`listening on ${PORT}`)
 })
