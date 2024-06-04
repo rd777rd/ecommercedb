@@ -7,10 +7,10 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 const saltRounds = 10;
-const PORT = 8081
+const port = process.env.PORT || 8081
 const app = express();
 app.use(express.json());
-app.use(cors({origin: ["http://localhost:3000"],
+app.use(cors({origin: ["https://ecommerce-imta.onrender.com"],
  methods: ["POST", "GET"],
   credentials:true}));
   
@@ -58,6 +58,8 @@ const db = mysql.createConnection({
   })
 app.get("/", (req, res) => {
     if (req.session.user){
+        console.log(req.session.user);
+                const name = data[0].firstName;
         res.send({loggedIn: true, user: req.session.user})
     } else {
         res.send({loggedIn:false})
@@ -115,6 +117,6 @@ app.post('/login', (req, res) => {
 })
 })
 
-app.listen(process.env.PORT || PORT, ()=> {
-    console.log('listening on ${PORT}')
+app.listen(port, ()=> {
+    console.log(`listening on ${port}`)
 })
