@@ -33,7 +33,7 @@ const db = mysql.createConnection({
     host: "ecommercedb-q0qz.onrender.com",
     user:"c64e4582d0fe934ba8bca7ffbc2d853a",
     password:")VhVUT2Cln!0ISU8",
-    database: 'ecommercedeployeddb'
+    database: 'deployeddb'
 })
 
  const verifyUser = (req,res,next) => {
