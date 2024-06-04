@@ -30,10 +30,10 @@ app.use(session({
 
 
 const db = mysql.createConnection({
-    host: "https://ecommercedb-q0qz.onrender.com",
+    host: "ecommercedb-q0qz.onrender.com",
     user:"c64e4582d0fe934ba8bca7ffbc2d853a",
     password:")VhVUT2Cln!0ISU8",
-    database: 'signup'
+    database: 'ecommercedeployeddb'
 })
 
  const verifyUser = (req,res,next) => {
