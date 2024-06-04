@@ -30,9 +30,9 @@ app.use(session({
 
 
 const db = mysql.createConnection({
-    host: "localhost",
-    user:"root",
-    password:"",
+    host: "ecommercedb-lc0j.onrender.com/",
+    user:"c64e4582d0fe934ba8bca7ffbc2d853a",
+    password:"4ac7477384ba191af5ea93cedd8b8f09",
     database: 'signup'
 })
 
