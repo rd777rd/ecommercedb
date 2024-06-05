@@ -13,8 +13,7 @@ app.use(express.json());
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'https://ecommerce-imta.onrender.com');
-    res.header('Access-Control-Allow-Headers', 
-               'Origin, X-Requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Credentials: true')
     next();
     });
@@ -58,12 +57,11 @@ const db = mysql.createConnection({
 
  }
   app.get('/', verifyUser, (req, res) =>{ 
-      res.set('Access-Control-Allow-Origin', 'https://ecommerce-imta.onrender.com');
     return res.json({Status:"Success", name: req.name});
+      
 
   })
 app.get("/", (req, res) => {
-    res.set('Access-Control-Allow-Origin', 'https://ecommerce-imta.onrender.com');
     if (req.session.user){
         console.log(req.session.user);
                 const name = data[0].firstName;
@@ -75,7 +73,6 @@ app.get("/", (req, res) => {
     
 })
 app.post('/signup', (req, res) => {
-    res.set('Access-Control-Allow-Origin', 'https://ecommerce-imta.onrender.com');
     const password = req.body.password
     const sql = "INSERT INTO `login`(`firstName`, `lastName`, `birthDate`, `address`, `email`, `password`) VALUES (?)";
     bcrypt.hash(password.toString(), saltRounds, (err, hash) => {
@@ -99,7 +96,6 @@ app.post('/signup', (req, res) => {
     })
    
 app.post('/login', (req, res) => {
-    res.set('Access-Control-Allow-Origin', 'https://ecommerce-imta.onrender.com');
     const sql ="SELECT * FROM `login` WHERE `email` = ?" ;
     db.query(sql, [req.body.email ], (err, data) => {
         if (err) {
