@@ -62,10 +62,12 @@ const db = mysql.createConnection({
 
  }
   app.get('/', verifyUser, (req, res) =>{ 
+      res.set('Access-Control-Allow-Origin', '*');
     return res.json({Status:"Success", name: req.name});
 
   })
 app.get("/", (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     if (req.session.user){
         console.log(req.session.user);
                 const name = data[0].firstName;
@@ -77,6 +79,7 @@ app.get("/", (req, res) => {
     
 })
 app.post('/signup', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     const password = req.body.password
     const sql = "INSERT INTO `login`(`firstName`, `lastName`, `birthDate`, `address`, `email`, `password`) VALUES (?)";
     bcrypt.hash(password.toString(), saltRounds, (err, hash) => {
@@ -100,6 +103,7 @@ app.post('/signup', (req, res) => {
     })
    
 app.post('/login', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     const sql ="SELECT * FROM `login` WHERE `email` = ?" ;
     db.query(sql, [req.body.email ], (err, data) => {
         if (err) {
