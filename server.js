@@ -10,7 +10,7 @@ const saltRounds = 10;
 const port = process.env.PORT || 8081
 const app = express();
 app.use(express.json());
-app.use(cors({origin: ["https://ecommerce-imta.onrender.com/login"],
+app.use(cors({origin: ["https://ecommerce-imta.onrender.com"],
  methods: ["POST", "GET"],
   credentials:true}));
   
