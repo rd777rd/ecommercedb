@@ -15,7 +15,6 @@ var corsOptions = {
     origin: function (origin, callback) {
         origins = ['https://ecommerce-imta.onrender.com', 'https://ecommercedb-q0qz.onrender.com' ]
         optionsSuccessStatus: 200
-         methods: ["POST, "GET"]
          credentials:true
         database.loadOrigins((error, origins) => {
             callback(error, origins);
