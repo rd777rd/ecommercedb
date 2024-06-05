@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors({origin: ["https://ecommerce-imta.onrender.com", "https://ecommercedb-q0qz.onrender.com"],
  methods: ["POST", "GET"],
  credentials:true,
- ('Access-Control-Allow-Credentials' : true)
+ 'Access-Control-Allow-Credentials' : true
              }));
 
 app.use(cookieParser());
