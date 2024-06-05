@@ -52,11 +52,11 @@ const db = mysql.createConnection({
   }
 
  }
-  app.get('https://ecommerce-imta.onrender.com', verifyUser, (req, res) =>{ 
+  app.get('/', verifyUser, (req, res) =>{ 
     return res.json({Status:"Success", name: req.name});
 
   })
-app.get("https://ecommerce-imta.onrender.com", (req, res) => {
+app.get("/", (req, res) => {
     if (req.session.user){
         console.log(req.session.user);
                 const name = data[0].firstName;
@@ -67,7 +67,7 @@ app.get("https://ecommerce-imta.onrender.com", (req, res) => {
 
     
 })
-app.post('https://ecommerce-imta.onrender.com/signup', (req, res) => {
+app.post('/signup', (req, res) => {
     const password = req.body.password
     const sql = "INSERT INTO `login`(`firstName`, `lastName`, `birthDate`, `address`, `email`, `password`) VALUES (?)";
     bcrypt.hash(password.toString(), saltRounds, (err, hash) => {
@@ -90,7 +90,7 @@ app.post('https://ecommerce-imta.onrender.com/signup', (req, res) => {
     })
     })
    
-app.post('https://ecommerce-imta.onrender.com/login', (req, res) => {
+app.post('/login', (req, res) => {
     const sql ="SELECT * FROM `login` WHERE `email` = ?" ;
     db.query(sql, [req.body.email ], (err, data) => {
         if (err) {
