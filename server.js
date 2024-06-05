@@ -94,7 +94,7 @@ app.post('/signup', (req, res) => {
     })
     })
    
-app.post('https://ecommercedb-q0qz.onrender.com/login', (req, res) => {
+app.post('/login', (req, res) => {
     const sql ="SELECT * FROM `login` WHERE `email` = ?" ;
     db.query(sql, [req.body.email ], (err, data) => {
         if (err) {
