@@ -11,7 +11,7 @@ const port = process.env.PORT || 20072
 const app = express();
 app.use(express.json());
 
-app.use(cors({origin: ["https://ecommerce-imta.onrender.com"],
+app.use(cors({origin: ["https://ecommerce-imta.onrender.com", "https://ecommercedb-q0qz.onrender.com/"],
  methods: ["POST", "GET"],
   withcredentials:true}));
 
