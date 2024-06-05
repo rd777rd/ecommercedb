@@ -89,6 +89,7 @@ app.post('/signup', (req, res) => {
             db.query(sql, [values], (err, result) => {
                 if(err) return res.json({Error: "Inserting data error in server"});
                 return res.json({Status: "Success"});
+             return res.redirect('https://ecommerce-imta.onrender.com/signup', 301)
             })
 
     })
