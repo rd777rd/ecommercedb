@@ -7,7 +7,7 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 const saltRounds = 10;
-const port = process.env.PORT || 8081
+const port = process.env.PORT || 20072
 const app = express();
 app.use(express.json());
 app.use(cors({origin: ["https://ecommerce-imta.onrender.com"],
