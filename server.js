@@ -13,7 +13,7 @@ app.use(express.json());
 
 app.use(cors({origin: ["https://ecommerce-imta.onrender.com", "https://ecommercedb-q0qz.onrender.com"],
  methods: ["POST", "GET"],
-  withcredentials:true}));
+  credentials:true}));
 
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
