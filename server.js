@@ -11,17 +11,11 @@ const port = process.env.PORT || 20072
 const app = express();
 app.use(express.json());
 
-var corsOptions = {
-    origin: function (origin, callback) {
-        origins = ['https://ecommerce-imta.onrender.com', 'https://ecommercedb-q0qz.onrender.com' ]
-        optionsSuccessStatus: 200
-         credentials:true
-        database.loadOrigins((error, origins) => {
-            callback(error, origins);
-        });
-    }
-}
-app.use(cors(corsOptions));
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 
+               'Origin, X-Requested-With, Content-Type, Accept');
+    next();
   
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
