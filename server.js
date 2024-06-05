@@ -11,12 +11,11 @@ const port = process.env.PORT || 20072
 const app = express();
 app.use(express.json());
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', ['https://ecommerce-imta.onrender.com']);
-    res.header('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept');
-    res.header('Access-Control-Allow-Credentials', 'true');
-    next();
-    });
+app.use(cors({origin: ["https://ecommerce-imta.onrender.com", "https://ecommercedb-q0qz.onrender.com"],
+ methods: ["POST", "GET"],
+ credentials:true,
+ ('Access-Control-Allow-Credentials' : true)
+             }));
 
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
