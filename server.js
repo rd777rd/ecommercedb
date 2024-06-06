@@ -34,9 +34,9 @@ app.use(session({
 
 const db = mysql.createConnection({
     host: "sql5.freemysqlhosting.net",
-    user: "	sql5712113",
+    user: "sql5712113",
     pasword: "pQK4n9nxML",
-    database: "	sql5712113"
+    database: "sql5712113"
 })
 
  const verifyUser = (req,res,next) => {
