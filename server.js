@@ -73,7 +73,7 @@ app.get("/", (req, res) => {
 })
 app.post('/signup', (req, res) => {
     const password = req.body.password
-    const sql = "INSERT INTO `userslog`(`firstName`, `lastName`, `birthDate`, `address`, `email`, `password`) VALUES (?)";
+    const sql = "INSERT INTO `userlog`(`firstName`, `lastName`, `birthDate`, `address`, `email`, `password`) VALUES (?)";
     bcrypt.hash(password.toString(), saltRounds, (err, hash) => {
         if (err) {
             return res.json({Error: "Error for password" });
