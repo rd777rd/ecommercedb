@@ -33,16 +33,10 @@ app.use(session({
 
 
 const db = mysql.createConnection({
-    MYSQL_ADDON_HOST: "bfnwurlpig5e68hclczy-mysql.services.clever-cloud.com",
-    MYSQL_ADDON_USER: "uy8jydz3g4ijvtyq",
-    MYSQL_ADDON_PASSWORD: "b4p6tD5LRgkEVOHLxIp",
-    MYSQL_ADDON_DB: "bfnwurlpig5e68hclczy",
-
-
-    host: MYSQL_ADDON_HOST,
-    user: MYSQL_ADDON_USER,
-    pasword: MYSQL_ADDON_PASSWORD,
-    database: MYSQL_ADDON_DB
+    host: "sql5.freemysqlhosting.net",
+    user: "	sql5712113",
+    pasword: "pQK4n9nxML",
+    database: "	sql5712113"
 })
 
  const verifyUser = (req,res,next) => {
