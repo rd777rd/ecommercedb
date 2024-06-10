@@ -12,9 +12,9 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({origin: "https://ecommerce-imta.onrender.com",
-res.header("Allow-Control-Allow-Origin", "https://ecommerce-imta.onrender.com");
-res.header("Acess-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept"); 
-res.header("Access-Control-Allow-Credentials": true);
+("Allow-Control-Allow-Origin", "https://ecommerce-imta.onrender.com");
+("Acess-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept"); 
+("Access-Control-Allow-Credentials": true);
  methods: ["POST", "GET"],
  credentials:true,
              }));
