@@ -35,10 +35,10 @@ app.use(session({
 
 
 const db = mysql.createConnection({
-    host: "sql5.freemysqlhosting.net",
-    user: "sql5712113",
-    pasword: "pQK4n9nxML",
-    database: "sql5712113"
+    host: "customers.cdgcqw4k6oi6.us-east-1.rds.amazonaws.com",
+    user: "admin",
+    pasword: "admin123",
+    database: "login"
 })
 
  const verifyUser = (req,res,next) => {
@@ -75,7 +75,7 @@ app.get("/", (req, res) => {
 })
 app.post('/signup', (req, res) => {
     const password = req.body.password
-    const sql = "INSERT INTO `userlog`(`firstName`, `lastName`, `birthDate`, `address`, `email`, `password`) VALUES (?)";
+    const sql = "INSERT INTO `login_info`(`firstName`, `lastName`, `birthDate`, `address`, `email`, `password`) VALUES (?)";
     bcrypt.hash(password.toString(), saltRounds, (err, hash) => {
         if (err) {
             return res.json({Error: "Error for password" });
@@ -97,7 +97,7 @@ app.post('/signup', (req, res) => {
     })
    
 app.post('/login', (req, res) => {
-    const sql ="SELECT * FROM `userlog` WHERE `email` = ?" ;
+    const sql ="SELECT * FROM `login_info` WHERE `email` = ?" ;
     db.query(sql, [req.body.email ], (err, data) => {
         if (err) {
             return res.json({Error: "Error"});
