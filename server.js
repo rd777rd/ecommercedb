@@ -72,7 +72,7 @@ app.get("/", (req, res) => {
 })
 app.post('/signup', (req, res) => {
     const password = req.body.password
-    const sql = "INSERT INTO `login_info`(`firstName`, `lastName`, `birthDate`, `address`, `email`, `password`) VALUES (?)";
+    const sql = "INSERT INTO `login.login_info`(`firstName`, `lastName`, `birthDate`, `address`, `email`, `password`) VALUES (?)";
     bcrypt.hash(password.toString(), saltRounds, (err, hash) => {
         if (err) {
             return res.json({Error: "Error for password" });
@@ -94,7 +94,7 @@ app.post('/signup', (req, res) => {
     })
    
 app.post('/login', (req, res) => {
-    const sql ="SELECT * FROM `login_info` WHERE `email` = ?" ;
+    const sql ="SELECT * FROM `login.login_info` WHERE `email` = ?" ;
     db.query(sql, [req.body.email ], (err, data) => {
         if (err) {
             return res.json({Error: "Error"});
