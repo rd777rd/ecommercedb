@@ -34,7 +34,7 @@ app.use(session({
 const db = mysql.createConnection({
     host: "customers.cdgcqw4k6oi6.us-east-1.rds.amazonaws.com",
     user: "admin",
-    pasword: "admin123",
+    password: "admin123",
     database: "login"
 })
 
