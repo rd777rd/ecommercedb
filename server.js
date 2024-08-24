@@ -33,6 +33,9 @@ app.use(session({
 })
 );
 
+app.enable('trust proxy');
+
+
 
 const db = mysql.createConnection({
     host: "signup.c1swwogug4b5.us-east-2.rds.amazonaws.com",
