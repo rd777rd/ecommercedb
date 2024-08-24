@@ -32,10 +32,10 @@ app.use(session({
 
 
 const db = mysql.createConnection({
-    host: "bfnwurlpig5e68hclczy-mysql.services.clever-cloud.com",
-    user: "uy8jydz3g4ijvtyq",
-    password: "b4p6tD5LRgkEVOHLxIp",
-    database: "bfnwurlpig5e68hclczy"
+    host: "signup.c1swwogug4b5.us-east-2.rds.amazonaws.com",
+    user: "admin",
+    password: "testing123$",
+    database: "signup"
 })
 
  const verifyUser = (req,res,next) => {
