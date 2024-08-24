@@ -11,9 +11,8 @@ const port = process.env.PORT || 8080
 const app = express();
 app.use(express.json());
 
-app.use(cors({origin: ["https://ecommerce-imta.onrender.com",
-                      "https://ecommercedb-q0qz.onrender.com"],
- methods: ["POST", "GET"],
+app.use(cors(
+  methods: ["POST", "GET"],
   credentials:true}));
 
 app.use(cookieParser());
