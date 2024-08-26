@@ -23,11 +23,11 @@ app.use(session({
     key: "userId",
     secret: "subscriber",
     sameSite: 'none',
-    secure: true,
     httpOnly: true,
     resave:false,
     saveUninitialized: false ,
     cookie: {
+        secure: true,
         expires: 60 * 60 * 24
     },
 })
