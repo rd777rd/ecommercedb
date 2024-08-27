@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: ["https://ecommerce-imta.onrender.com", "https://ecommercedb-q0qz.onrender.com"],
+  origin: ["https://ecommerce-imta.onrender.com"],
   methods: ["POST", "GET"],
   credentials:true}));
 
